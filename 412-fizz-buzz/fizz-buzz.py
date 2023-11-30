@@ -3,14 +3,12 @@ class Solution:
         newArr = []
         for i in range(1, n + 1):
             if i % 3 == 0 and i % 5 == 0:
-                newArr.insert(len(newArr), "FizzBuzz")
+                newArr.append("FizzBuzz")
             elif i % 3 == 0:
-                newArr.insert(len(newArr), "Fizz")
+                newArr.append("Fizz")
             elif i % 5 == 0:
-                newArr.insert(len(newArr), "Buzz")
+                newArr.append("Buzz")
             else:
-                newArr.insert(len(newArr), str(i))
-
+                newArr.append(str(i))
         return newArr
-
-       
+    
