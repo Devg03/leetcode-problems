@@ -1,4 +1,3 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        return list(str(x)) == list(reversed(str(x)))
- 
+        return list(reversed(str(x))) == list(str(x))
