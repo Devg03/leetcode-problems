@@ -1,9 +1,10 @@
 class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
-        count = 0
-        while count < len(nums):
-            if nums.count(nums[count]) > 1:
-                nums.pop(count)
-                count -= 1
-            count += 1
-        return len(nums)
+    def removeDuplicates(self, numbers: List[int]) -> int:
+        i = 1
+        
+        for j in range(1, len(numbers)):
+            if numbers[i - 1] != numbers[j]:
+                numbers[i] = numbers[j]
+                i += 1
+
+        return i
