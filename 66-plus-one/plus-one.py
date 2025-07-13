@@ -4,8 +4,7 @@ class Solution:
         for i in digits:
             strDigits += str(i)
 
-        intDigits = int(''.join(strDigits))
-        intDigits += 1
+        intDigits = str(int(''.join(strDigits)) + 1)
 
         res = []
         for i in str(intDigits):
