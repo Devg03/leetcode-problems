@@ -6,8 +6,7 @@ class Solution:
         for i in range(1, len(prices)):
             if prices[i] < buyPrice:
                 buyPrice = prices[i]
-            else:
-                if ((prices[i]-buyPrice) > profit):
+            elif ((prices[i]-buyPrice) > profit):
                     profit = prices[i] - buyPrice
 
         return profit
