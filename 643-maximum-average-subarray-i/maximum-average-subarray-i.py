@@ -3,7 +3,6 @@ class Solution:
         n = len(nums)
         cur_sum = 0
 
-
         for i in range(k):
             cur_sum += nums[i]
 
