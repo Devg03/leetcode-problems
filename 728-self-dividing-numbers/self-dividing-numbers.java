@@ -6,17 +6,18 @@ class Solution {
                 nums.add(i);
             }
         }
+
         return nums;
     }
 
-    boolean isDivisible(int num) {
-        int divisor = num;
+    public boolean isDivisible(int n) {
+        int divisor = n;
 
         while (divisor > 0) {
             int digit = divisor % 10;
 
             if (digit == 0) return false;
-            if (num % digit != 0) return false;
+            if (n % digit != 0) return false;
 
             divisor = divisor / 10;
         }
