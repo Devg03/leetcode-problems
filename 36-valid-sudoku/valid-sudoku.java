@@ -13,23 +13,19 @@ class Solution {
 
         for (int r = 0; r < N; r++) {
             for (int c = 0; c < N; c++) {
-                // To iterate each cell
-                char value = board[r][c];
+                char cell = board[r][c];
 
-                // Checks if cell contains a number
-                if (value == '.') continue;
+                if (cell == '.') continue;
+                
+                if (rows[r].contains(cell)) return false;
+                rows[r].add(cell);
 
-                // Checks row for numbers
-                if (rows[r].contains(value)) return false;
-                rows[r].add(value);
-
-                // Checks column for numbers
-                if (cols[c].contains(value)) return false;
-                cols[c].add(value);
+                if (cols[c].contains(cell)) return false;
+                cols[c].add(cell);
 
                 int idx = (r/3) * 3 + (c/3);
-                if (boxes[idx].contains(value)) return false;
-                boxes[idx].add(value);
+                if (boxes[idx].contains(cell)) return false;
+                boxes[idx].add(cell);
             }
         }
         return true;
