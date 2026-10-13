@@ -13,10 +13,7 @@ class Solution:
 
         print(counter)
         for i in t:
-            if i not in counter:
-                return False
-
-            if t.count(i) != counter[i]:
+            if (i not in counter) or (t.count(i) != counter[i]):
                 return False
 
         return True
