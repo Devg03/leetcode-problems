@@ -8,8 +8,9 @@ class Solution:
         for i in s:
             if i in counter:
                 counter[i] += 1
-            else:
+            else:    
                 counter[i] = 1
+
 
         print(counter)
         for i in t:
