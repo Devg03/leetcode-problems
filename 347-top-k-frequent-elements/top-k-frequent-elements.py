@@ -1,8 +1,18 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        if len(nums) == k:
-            return nums
+        bucket = [[] for _ in range(len(nums) + 1)]
+        freq = {}
 
-        count = Counter(nums)
+        freq = Counter(nums)
 
-        return heapq.nlargest(k, count.keys(), key=count.get)
+        for key, val in freq.items():
+            bucket[val].append(key)
+
+        result = []
+        position = len(bucket) - 1
+
+        while len(result) < k and position >= 0:
+            result.extend(bucket[position])
+            position -= 1
+        
+        return result
