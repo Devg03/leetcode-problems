@@ -1,19 +1,18 @@
 class Solution:
-    def isValid(self, s: str):
+    def isValid(self, s: str) -> bool:
         stack = []
-        closeToOpen = {
-            "}" : "{",
-            ")" : "(",
-            "]" : "[",
-        }
+        mappings = {"}":"{", ")": "(", "]":"["}
 
-        for c in s:
-            if c in closeToOpen:
-                if stack and stack[-1] == closeToOpen[c]:
-                    stack.pop()
+        for char in s:
+            if char in mappings:
+                if stack:
+                    top_element = stack.pop()
                 else:
+                    top_element = '#'
+
+                if mappings[char] != top_element:
                     return False
             else:
-                stack.append(c)
+                stack.append(char)
 
-        return stack == []
+        return not stack
