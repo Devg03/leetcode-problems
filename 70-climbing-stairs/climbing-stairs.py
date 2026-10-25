@@ -3,9 +3,7 @@ class Solution:
         if n == 1:
             return 1
 
-        dp = [
-            0 for _ in range(n + 1)
-        ]  # We create a table consisted of 0 to the number of steps + 1
+        dp = [0] * (n + 1)  # We create a table consisted of 0 to the number of steps + 1
         dp[1] = 1  # To reach 1st stair take 1 step
         dp[2] = 2  # To reach 2nd stair take 2 steps
 
